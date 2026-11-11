@@ -35,7 +35,7 @@ Open question :
 
 ### Equations 
 
-To describe the evolutions of particle, we will use Lorentz's equation on a electrostatic environment (B is neglected due to assumption n.2): $ m  \frac{d\vec{v}}{dt} = qE  $ 
+To describe the evolutions of particle, we will use Lorentz's equation on a electrostatic environment (B is neglected due to assumption n.2): $m  \frac{d\vec{v}}{dt} = qE$ 
 
 
 
