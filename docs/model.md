@@ -13,29 +13,31 @@ The division of the system will be done on a constant step $\Delta x$.
 
 This project is based on a few assumptions: 
 
-- [1] The plasma is a collisionless medium, where the average density of electron & ions does not exceed a certain value. (to check : no = 1e10 m^-3) This is true in low density plasma, such as electric propulsion.
+- [1] The plasma is a collisionless medium, where the average density of electron & ions does not exceed a certain value. (to check : no = 1e10 m^-3) This is true in low density plasma, such as electric propulsion as long as $\lambda_{th} >> L$
 
 - [2] We will neglect any B field due to the absence of an external applied field. Furthermore, let B = B(x). Then, rot(B) has null values on x,y and z coordinates, thus, B = 0. We can then assume the absence of any external magnetic field. 
 
 - [3] We assume that a particle touching the wall diseappears : if it's an electron, it goes into the "mass" and if it's an ion, it catches an electron and recombinate to get back into the plasma. Because our model is not focusing on neutral particles, we consider the ion deleted. 
 
-- [4] We neglect any type of secondary emissions and mirror effect that could send back low-energy electrons into the plasma.
 
 Because of assumption 1, we are not allowing any ionization. Thus, we need another assumption to inject ions & electrons otherwise the plasma will not be sustained. At the equilibrium, the losses from the walls are equals to the gains due to ionization. Due to various normalisation caracterics being dependent to the electron density (Debye length, plasma frequency,...), we will keep the total number of electron constant. Thus : 
 
-- [5] For each electron lost in the walls, a pair will be created at the center of the system, far from the walls, to describe the ionization process. However if a ion touches the walls, we remove it as the creation of another pair would just result in the infinite augmentation of the particles density, which is not possible. 
+- [4] For each electron lost in the walls, a pair will be created at the center of the system, far from the walls, to describe the ionization process. However if a ion touches the walls, we remove it as the creation of another pair would just result in the infinite augmentation of the particles density, which is not possible. 
 
-- [6] For each pair created, the electrons will have a designated velocity chosen randomly according to a gaussian curve. (Open Question: are there any other possibilities to do that ? )
-
-
-Open question : 
-
-- Macro particles due to particle-in-cell simulation -> What are they representing? 
+- [5] For each pair created, the electrons will have a designated velocity chosen randomly according to a gaussian curve. (Open Question: are there any other possibilities to do that ? )
 
 
 ### Equations 
 
 To describe the evolutions of particle, we will use Lorentz's equation on a electrostatic environment (B is neglected due to assumption n.2): $m  \frac{d\vec{v}}{dt} = q\vec{E}$ 
+
+For electrons : $m  \frac{d\vec{v_{e}}}{dt} = -e\vec{E}$
+
+For ions : $m  \frac{d\vec{v_{i}}}{dt} = +e\vec{E}$
+
+Using the Gauss equation, we arrive to : $\frac{d^{2}\phi(x,t)}{d^2t} = -\frac{\rho(x)}{\epsilon_0}$
+
+The system is a second order differential equation with two conditions : $\phi(0) = \phi(L) = 0$
 
 
 
