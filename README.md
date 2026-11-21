@@ -6,4 +6,4 @@ using the particle-in-cell (PIC) method. It is written in C.
 The goal is to study how a sheath forms in front of each wall and to
 compare the results with sheath theory.
 
-**Status:** work in progress.
+**Status:** Work in progress - Milestone 1: Particle pusher validated on uniform field 
