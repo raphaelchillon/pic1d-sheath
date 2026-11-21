@@ -48,7 +48,7 @@ int main(void){
     
     /* MAIN LOOP */
 
-    printf("#   time,   xth,    x,     xth - x");
+    printf("#   time,   xth,    x,     xth - x \n");
 
 
     for(int j=0; j<50; j++){
@@ -59,7 +59,7 @@ int main(void){
         push_particles(&electron, E_field, dt);
 
         double x = electron.p[0].x;
-        printf("%f, %f, %f, %e \n", time , xth , x, xth - x);
+        printf("%f %f %f %e \n", time , xth , x, xth - x);
 
     } 
 
