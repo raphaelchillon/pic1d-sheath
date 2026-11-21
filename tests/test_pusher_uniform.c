@@ -48,6 +48,9 @@ int main(void){
     
     /* MAIN LOOP */
 
+    printf("#   time,   xth,    x,     xth - x");
+
+
     for(int j=0; j<50; j++){
 
         double xth = (electron.q/electron.m)*field_value*1/2*((j+1)*dt)*((j+1)*dt) + v0*((j+1)*dt) + x0;
@@ -56,7 +59,7 @@ int main(void){
         push_particles(&electron, E_field, dt);
 
         double x = electron.p[0].x;
-        printf("time: (%f), x_th: %f, x: %f, xth - x = %e \n", time , xth , x, xth - x);
+        printf("%f, %f, %f, %e \n", time , xth , x, xth - x);
 
     } 
 
