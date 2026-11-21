@@ -10,7 +10,7 @@ int main(void){
 
     double dt = 0.1; 
     double dx = 50;
-    double field = 1; 
+    double field_value = 1; 
 
     struct specie electron;     //defining the electron specie 
         electron.q=-1; 
@@ -22,6 +22,8 @@ int main(void){
     printf("Error : not enough memory\n");
     return 1;
     } 
+    
+    /* INITIAL CONDITIONS */
 
     for(int i=0; i<electron.number; i++){   //setting the particle's velocity & position to the initial values x=0 & v=1 
 
@@ -29,8 +31,17 @@ int main(void){
         electron.p[i].v = 1; 
 
     }
-        
-    /* INITIAL CONDITIONS */
+
+    double *E_field = calloc(electron.number,sizeof(double));   //initialisation of the field on each particles (here it's uniform)
+
+    for(int i=0; i<electron.number; i++){
+
+        E_field[i]=field_value; 
+
+    }
+    
+
+    velocity_setback(electron, E_field, dt) //Initial velocity stepback
 
     
 
