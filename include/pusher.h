@@ -3,9 +3,9 @@
 
 #include "particles.h"
 
-void speed_setback(struct specie A, double field, double timestep);
+void velocity_setback(struct specie *sp, double *field, double dt);
 
-void pusher(struct specie A, double field, double timestep);
+void push_particles(struct specie *sp, double *field, double dt);
 
 
 #endif
