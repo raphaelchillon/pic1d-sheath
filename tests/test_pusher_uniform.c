@@ -41,7 +41,7 @@ int main(void){
     }
     
 
-    velocity_setback(electron, E_field, dt) //Initial velocity stepback
+    velocity_setback(&electron, E_field, dt) //Initial velocity stepback
 
     
 
