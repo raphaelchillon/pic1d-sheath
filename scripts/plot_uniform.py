@@ -1,4 +1,4 @@
-"""Figure of the pusher in uniform electrostatic field"""
+"""Plots of the pusher in uniform electrostatic field"""
 import numpy as np
 import matplotlib.pyplot as plt
 
