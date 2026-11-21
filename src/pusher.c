@@ -18,6 +18,12 @@ for(int i=0; i<sp->number; i++){
 
 void push_particles(struct specie *sp, double *field, double dt){
 
+for(int i=0; i<sp->number; i++){
 
+    sp->p[i].v  += (dt)*(sp->q/sp->m)*field[i]; /* Using v(end) - v(start) = dt*q/mE */
+
+    sp->p[i].x  += dt*sp->p[i].v; /* Using v(end) - v(start) = dt*q/mE */
+
+}
 
 }
