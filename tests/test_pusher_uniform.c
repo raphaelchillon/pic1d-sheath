@@ -9,8 +9,10 @@ int main(void){
     /* PARAMETERS DEFINITION */
 
     double dt = 0.1; 
-    double dx = 50;
     double field_value = 1; 
+
+    double x0 = 0;
+    double v0 = 1;
 
     struct specie electron;     //defining the electron specie 
         electron.q=-1; 
@@ -27,8 +29,8 @@ int main(void){
 
     for(int i=0; i<electron.number; i++){   //setting the particle's velocity & position to the initial values x=0 & v=1 
 
-        electron.p[i].x = 0;                    
-        electron.p[i].v = 1; 
+        electron.p[i].x = x0;                    
+        electron.p[i].v = v0; 
 
     }
 
@@ -41,10 +43,26 @@ int main(void){
     }
     
 
-    velocity_setback(&electron, E_field, dt) //Initial velocity stepback
+    velocity_setback(&electron, E_field, dt); //Initial velocity stepback
 
     
+    /* MAIN LOOP */
 
+    for(int j=0; j<50; j++){
+
+        double xth = (electron.q/electron.m)*field_value*1/2*((j+1)*dt)*((j+1)*dt) + v0*((j+1)*dt) + x0;
+        double time = (j+1)*dt;
+
+        push_particles(&electron, E_field, dt);
+
+        double x = electron.p[0].x;
+        printf("time: (%f), x_th: %f, x: %f, xth - x = %e \n", time , xth , x, xth - x);
+
+    } 
+
+
+    free(E_field);
+    free(electron.p);
 
 
     return 0;
