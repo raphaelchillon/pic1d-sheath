@@ -46,5 +46,23 @@ The system is a second order differential equation with two conditions : $\phi(0
 
 ## Scales & Normalized values
 
-in progress 
+To write our equations simplier, we can use multiple values to normalize our equations. Thus, let's us : 
+
+- The Debye scale $\lambda_D$. This is the minimum length value the plasmas needs in order to "screen off" a charge differential inside the plasma. It is very important 
+that we check thoroughly that $\Delta_x$ < $\lambda_D$. If this condition is not valid, our model will simply not be able to simulate the plasma behavior. To get its expression, we use the boltzmann distribution on the electrons density coupled with the poisson equation. We then get $\lambda_D = \sqrt{\frac{\epsilon_0 k_b T_e}{n_0 e^2}}$. 
+
+
+- The plasma frequency $\omega_p$. Let's imagine a plasma with an uniform density of electrons and ions and let's move a whole column of electron by a small quantity named $\delta_x$. The resulting potential caused by the density difference will create a electric field $\vec{E}$ that will push back the electrons. Using Newton's second law : 
+$m_e \times \frac{d^2\delta_x}{dx^2} = -eE_x$ and Gauss's Theorem E = $\frac{n_0 \times e \times \delta_x}{\epsilon_0}$, we get $\frac{d^2\delta_x}{dx^2} + \underbrace{\frac{n_0 e^2}{m_e \epsilon_0}}_{\omega_p^2} \times \delta_x$. The plasma frequency $\omega_p$ is just the frequency of electron's oscillations when displaced by a small position. 
+
+
+- the thermal velocity $v_{th}$. Using a maxwellian distribution for the velocity distribution, it can be defined as the standard deviation, or the mean quadratic velocity of electrons. It is linked to $\lambda_D$ and $\omega_p$ : $v_{th}$ = $\lambda_D \times \omega_p$ = $\sqrt{\frac{k_b T_e}{m_e}}$
+
+- the density $n_0$. Far from any disturbance, the electrons and the ions have an approximately uniform density due to the plasma properties. This density will be used as a normalisation value. 
+
+- e and m_e for the charges and the masses. 
+
+
+
+
 
