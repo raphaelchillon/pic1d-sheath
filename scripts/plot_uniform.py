@@ -8,11 +8,11 @@ fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True, figsize=(7, 6))
 
 ax1.plot(t, x_th, "-", label="exact solution")
 ax1.plot(t, x, "o", markersize=3, label="leapfrog")
-ax1.set_ylabel("position x ")
+ax1.set_ylabel("position x/λ_D")
 ax1.legend()
 
 ax2.plot(t, diff, ".-")
-ax2.set_xlabel("time t")
+ax2.set_xlabel("time t*w_p")
 ax2.set_ylabel("x_th − x")
 
 fig.tight_layout()
