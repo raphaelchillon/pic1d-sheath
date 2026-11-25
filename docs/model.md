@@ -13,13 +13,15 @@ The division of the system will be done on a constant step $\Delta x$.
 
 This project is based on a few assumptions: 
 
-- [1] The plasma is a collisionless medium, where the average density of electron & ions does not exceed a certain value. This is true in low density plasma, such as electric propulsion as long as $\lambda_{th} >> L$ where $\lambda_{th}$ is the mean free path.
+- [1] The plasma is a collisionless medium, where the average density of electron & ions does not exceed a certain value. This is true in low density plasma, such as electric propulsion as long as $\lambda_{mfp} >> L$, where $\lambda_{mfp}$ is the mean free path, which is the case in electric propulsion (to be checked for the target plasma).
 
-- [2] We will neglect any B field due to the absence of an external applied field. Furthermore, let B = B(x). Then, rot(B) has null values on x,y and z coordinates, thus, B = 0. We can then assume the absence of any external magnetic field. 
+- [2] There is no magnetic field. No external magnetic field is applied, and the plasma cannot generate one in this geometry. All quantities depend on x only, and particles move along $x$ only, so the current density has an x component only: $J_y = J_z = 0$. Since $\nabla \cdot \vec{B} = 0$ gives $\partial_x B_x = 0$, $B_x$ is uniform. 
+In one dimension, $\nabla \times \vec{B} = (0, -\partial_x B_z, \partial_x B_y)$, and the $y$ and $z$ components of Ampère's law give $\partial_x B_z = \partial_x B_y = 0$,because $J_y$, $J_z$, $E_y$ and $E_z$ are all zero. $\vec{B}$ is therefore uniform, equal to the applied field, that is zero. 
+The model is exactly electrostatic. 
 
-- [3] We assume that a particle touching the wall diseappears : if it's an electron, it goes into the "mass" and if it's an ion, it catches an electron and recombinate to get back into the plasma. Because our model is not focusing on neutral particles, we consider the ion deleted. 
+- [3] We assume that a particle touching the wall diseappears : if it's an electron, it goes into the ground and if it's an ion, it catches an electron and recombinate to get back into the plasma. Because our model is not focusing on neutral particles, we consider the ion deleted. 
 
-- [4] We neglect any type of secondary emissions and mirror effect that could send back low-energy electrons into the plasma.
+- [4] We neglect any type of secondary emissions and mirror effect that could send back low-energy electrons from the wall into the plasma.
 
 Because of assumption 1, we are not allowing any ionization. Thus, we need another assumption to inject ions & electrons otherwise the plasma will not be sustained. At the equilibrium, the losses from the walls are equals to the gains due to ionization. Due to various normalisation caracterics being dependent to the electron density (Debye length, plasma frequency,...), we will keep the total number of electron constant. Thus : 
 
@@ -89,9 +91,8 @@ This allows us to have Newton's equation rewritten as $\frac{du}{d\tau} = \frac{
 
 
 > [!NOTE]
-
-> **However, from now on, we drop the normalization notation : x, v, t, E and $\phi$ denote the normalized quantities $\xi$, u, $\tau$, E/$E_0$ and $\frac{\phi}{k_b T_e/e}$.** 
-
+> From now on, we drop the normalization notation: $x$, $v$, $t$, $E$ and $\phi$
+> denote the normalized quantities $\xi$, $u$, $\tau$, $E/E_0$ and $e\phi/(k_B T_e)$.
 
 
 
