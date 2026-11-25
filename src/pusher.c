@@ -40,7 +40,7 @@ void push_particles(struct specie *sp, double *field, double dt){
 
         sp->p[i].v  += (dt)*(sp->q/sp->m)*field[i]; /* Updating the velocity */
 
-        sp->p[i].x  += dt*sp->p[i].v; /* Using v(end) - v(start) = dt*q/mE */
+        sp->p[i].x  += dt*sp->p[i].v; /* Using x(end) - x(start) = dt*v */
 
     }
 
