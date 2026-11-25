@@ -1,3 +1,11 @@
+/* 
+
+All quantities in normalized units, see particles.h and docs/model.md. 
+
+
+*/
+
+
 #ifndef PARTICLES_H
 #define PARTICLES_H
 
