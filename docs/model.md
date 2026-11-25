@@ -85,7 +85,12 @@ Furthermore, for the potential, we will be using $\frac{\Phi}{k_b T_e/e}$. Indee
 
 
 
-This allows us to have Newton's equation rewritten as $\frac{du}{d\tau} = \frac{\tilde{q}}{\tilde{m}} \times \frac{E}{E_0}$ where $E_0 = \frac{k_b T_e}{e \lambda_D}$ 
+This allows us to have Newton's equation rewritten as $\frac{du}{d\tau} = \frac{\tilde{q}}{\tilde{m}} \times \frac{E}{E_0}$ where $E_0 = \frac{k_b T_e}{e \lambda_D}$. 
+
+
+> [!NOTE]
+
+> **However, from now on, we drop the normalization notation : x, v, t, E and $\phi$ denote the normalized quantities $\xi$, u, $\tau$, E/$E_0$ and $\frac{\phi}{k_b T_e/e}$.** 
 
 
 
