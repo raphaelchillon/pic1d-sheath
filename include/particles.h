@@ -1,15 +1,17 @@
-/* 
-
-All quantities in normalized units, see particles.h and docs/model.md. 
-
-
-*/
-
-
 #ifndef PARTICLES_H
 #define PARTICLES_H
 
-
+/*
+ * Particle and species data structures.
+ *
+ * All quantities are in normalized units (see docs/model.md):
+ *   position x   in Debye lengths, lambda_D
+ *   velocity v   in thermal velocities, v_th = sqrt(k_B T_e / m_e)
+ *   time t       in inverse plasma frequencies, 1/omega_p
+ *   field E      in E_0 = k_B T_e / (e lambda_D)
+ *   charge q     in elementary charges, e
+ *   mass m       in electron masses, m_e
+ */
 
 struct particle {
 
