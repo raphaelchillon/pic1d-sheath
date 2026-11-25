@@ -52,7 +52,7 @@ To write our equations simplier, we can use multiple values to normalize our equ
 
 
 - The plasma frequency $\omega_p$. Let's imagine a plasma with an uniform density of electrons and ions and let's move a whole column of electron by a small quantity named $\delta_x$. The resulting potential caused by the density difference will create a electric field $\vec{E}$ that will push back the electrons. Using Newton's second law : 
-$m_e \times \frac{d^2\delta_x}{dt^2} = -eE_x$ and Gauss's Theorem E = $\frac{n_0 \times e \times \delta_x}{\epsilon_0}$, we get $\frac{d^2\delta_x}{dx^2} + \underbrace{\frac{n_0 e^2}{m_e \epsilon_0}}_{\omega_p^2} \times \delta_x = 0$. The plasma frequency $\omega_p$ is just the frequency of electron's oscillations when displaced by a small position. 
+$m_e \times \frac{d^2\delta_x}{dt^2} = -eE_x$ and Gauss's Theorem E = $\frac{n_0 \times e \times \delta_x}{\epsilon_0}$, we get $\frac{d^2\delta_x}{dt^2} + \underbrace{\frac{n_0 e^2}{m_e \epsilon_0}}_{\omega_p^2} \times \delta_x = 0$. The plasma frequency $\omega_p$ is just the frequency of electron's oscillations when displaced by a small position. 
 
 
 - the thermal velocity $v_{th}$. Using a maxwellian distribution for the velocity distribution, it can be defined as the standard deviation, or the mean quadratic velocity of electrons. It is linked to $\lambda_D$ and $\omega_p$ : $v_{th}$ = $\lambda_D \times \omega_p$ = $\sqrt{\frac{k_b T_e}{m_e}}$
