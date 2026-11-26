@@ -2,28 +2,28 @@
 
 ## Objectives
 
-This project aims to observe the evolution of the sheath, created on a grounded wall, due to a bounded plasma. Thus, I intend to measure it's size and evolution on a said timescale. 
+This project aims to observe the evolution of the sheath, created on the grounded wals, due to a bounded plasma. Thus, I intend to measure its size and evolution on a said timescale. 
 
 ### System
 
-The system consist in a line where particles can travel onto, expanding on the x-axis from x=0 to x=L. It is bounded by a absorbing and grounded wall. 
+The system consist in a line where particles can travel onto, expanding on the x-axis from x=0 to x=L. It is bounded by two absorbing and grounded walls. 
 The division of the system will be done on a constant step $\Delta x$.
 
 ## Model 
 
 This project is based on a few assumptions: 
 
-- [1] The plasma is a collisionless medium, where the average density of electron & ions does not exceed a certain value. This is true in low density plasma, such as electric propulsion as long as $\lambda_{mfp} >> L$, where $\lambda_{mfp}$ is the mean free path, which is the case in electric propulsion (to be checked for the target plasma).
+- [1] The plasma is a collisionless medium. This is true as long as $\lambda_{mfp} >> L$, where $\lambda_{mfp}$ is the mean free path, which is the case in electric propulsion (to be checked for the target plasma).
 
 - [2] There is no magnetic field. No external magnetic field is applied, and the plasma cannot generate one in this geometry. All quantities depend on x only, and particles move along $x$ only, so the current density has an x component only: $J_y = J_z = 0$. Since $\nabla \cdot \vec{B} = 0$ gives $\partial_x B_x = 0$, $B_x$ is uniform. 
 In one dimension, $\nabla \times \vec{B} = (0, -\partial_x B_z, \partial_x B_y)$, and the $y$ and $z$ components of Ampère's law give $\partial_x B_z = \partial_x B_y = 0$,because $J_y$, $J_z$, $E_y$ and $E_z$ are all zero. $\vec{B}$ is therefore uniform, equal to the applied field, that is zero. 
 The model is exactly electrostatic. 
 
-- [3] We assume that a particle touching the wall diseappears : if it's an electron, it goes into the ground and if it's an ion, it catches an electron and recombinate to get back into the plasma. Because our model is not focusing on neutral particles, we consider the ion deleted. 
+- [3] We assume that a particle touching the wall disappears : if it's an electron, it goes into the ground and if it's an ion, it catches an electron and recombinates to get back into the plasma. Because our model is not focusing on neutral particles, we consider the ion deleted. 
 
 - [4] We neglect any type of secondary emissions and mirror effect that could send back low-energy electrons from the wall into the plasma.
 
-Because of assumption 1, we are not allowing any ionization. Thus, we need another assumption to inject ions & electrons otherwise the plasma will not be sustained. At the equilibrium, the losses from the walls are equals to the gains due to ionization. Due to various normalisation caracterics being dependent to the electron density (Debye length, plasma frequency,...), we will keep the total number of electron constant. Thus : 
+Because of assumption 1, we are not allowing any ionization. Thus, we need another assumption to inject ions & electrons otherwise the plasma will not be sustained. At the equilibrium, the losses from the walls are equals to the gains due to ionization. Due to various normalisation characteristics being dependent to the electron density (Debye length, plasma frequency,...), we will keep the total number of electron constant. Thus : 
 
 - [5] For each electron lost in the walls, a pair will be created at the center of the system, far from the walls, to describe the ionization process. However if a ion touches the walls, we remove it as the creation of another pair would just result in the infinite augmentation of the particles density, which is not possible. 
 
@@ -40,7 +40,9 @@ For electrons : $m_e  \frac{d\vec{v_{e}}}{dt} = -e\vec{E}$
 
 For ions : $m_i  \frac{d\vec{v_{i}}}{dt} = +e\vec{E}$
 
-Using the Gauss equation and E = - $\frac{d\phi}{dx}$, we arrive to : $\frac{\partial^{2}\phi(x,t)}{\partial^2x} = -\frac{\rho(x,t)}{\epsilon_0}$ with $\rho = e(n_i - n_e)$
+Furthermore, we have $\frac{dx}{dt} = v$
+
+Using the Gauss equation and E = - $\frac{d\phi}{dx}$, we arrive to : $\frac{\partial^{2}\phi(x,t)}{\partial x^2} = -\frac{\rho(x,t)}{\epsilon_0}$ with $\rho = e(n_i - n_e)$
 
 The system is a second order differential equation with two conditions : $\phi(0) = \phi(L) = 0$
 
@@ -48,7 +50,7 @@ The system is a second order differential equation with two conditions : $\phi(0
 
 ## Scales & Normalized values
 
-To write our equations simplier, we can use multiple values to normalize our equations. Thus, let's us : 
+Now, we will introduce multiple values in order to normalize our equations. Thus, let's use : 
 
 - The Debye scale $\lambda_D$. This is the minimum length value the plasmas needs in order to "screen off" a charge differential inside the plasma. To get its expression, we use the boltzmann distribution on the electrons density coupled with the poisson equation. We then get $\lambda_D = \sqrt{\frac{\epsilon_0 k_b T_e}{n_0 e^2}}$. 
 
