@@ -35,6 +35,7 @@ ax6.plot(t, W_3, "-", markersize=3, label="leapfrog of particle 3")
 ax6.set_ylabel("Energy W")
 ax6.legend()
 
+ax1.set_xlim(600, 628)
 fig.tight_layout()
 fig.savefig("output/harmonic.png", dpi=150)
 print("Saved in output/harmonic.png")
