@@ -25,6 +25,8 @@ int main(void){
     double x0 = 0;
     double v0 = 1;
 
+    int iterations = 50;
+
     struct specie electron;     //defining the electron specie 
         electron.q=-1; 
         electron.m=1; 
@@ -36,6 +38,9 @@ int main(void){
     return 1;
     } 
     
+
+
+
     /* INITIAL CONDITIONS */
 
     for(int i=0; i<electron.number; i++){   //setting the particle's velocity & position to the initial values x=0 & v=1 
@@ -46,6 +51,8 @@ int main(void){
     }
 
     double *E_field = calloc(electron.number,sizeof(double));   //initialisation of the field on each particles (here it's uniform)
+
+    if (E_field == NULL){return 1;} //checking for NULL pointer E_field
 
     for(int i=0; i<electron.number; i++){
 
@@ -62,9 +69,9 @@ int main(void){
     printf("#   time,   xth,    x,     xth - x \n");
 
 
-    for(int j=0; j<50; j++){
+    for(int j=0; j<iterations; j++){
 
-        double xth = (electron.q/electron.m)*field_value*1/2*((j+1)*dt)*((j+1)*dt) + v0*((j+1)*dt) + x0;
+        double xth = (electron.q/electron.m)*field_value*0.5*((j+1)*dt)*((j+1)*dt) + v0*((j+1)*dt) + x0;
         double time = (j+1)*dt;
 
         push_particles(&electron, E_field, dt);

@@ -25,10 +25,10 @@ struct particle {
 
 struct specie {
 
-    double q; /*Specie's charge, on the x axis'*/ 
-    double m; /*Specie's mass, on the x axis'*/ 
-    struct particle *p; /*pointer to the particles from said specie'*/ 
-    int number; /*Number of particles inside the specie'*/ 
+    double q; 
+    double m; 
+    struct particle *p; 
+    int number; //number of particles inside the specie
 
 };
 

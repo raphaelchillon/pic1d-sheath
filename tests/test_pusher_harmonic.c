@@ -38,13 +38,18 @@ int main(void){
     double initial_vel[]= {1 , 1 , 1}; // Initial condition for velocity
 
     double temp_pos[electron.number]; // temporary position for W -> x^n when at time n+1 
-    double temp_vel[electron.number]; // temporary velocity for W -> v^n when at time n+1 
+    double temp_vel[electron.number]; // temporary velocity for W -> v^n-1/2 when at time n+1
 
     double W_th[electron.number]; //theorical energy (it is conserved)
 
     double *E_field = calloc (electron.number, sizeof(double)); //initialization of the field
 
-    if (E_field == NULL || electron.p == NULL){return 1;} //checking for NULL pointer
+    if (E_field == NULL || electron.p == NULL){     //checking whether the pointers works 
+                           
+        printf("Error : not enough memory\n");
+        return 1;
+        
+    } 
 
     for(int i=0; i<electron.number; i++){ //initialization of position, velocity, field & calcul of energy 
 
@@ -115,7 +120,7 @@ int main(void){
 
             xth[i]=initial_pos[i]*cos(time) + initial_vel[i]*sin(time); // theorical solution for harmonic oscillator with x0 & v0 as initial values. 
 
-            double mean_velocity = ( electron.p[i].v + temp_vel[i] ) * 0.5; // // average of v(n-1/2) and v(n+1/2): x and v must be taken at the same time
+            double mean_velocity = ( electron.p[i].v + temp_vel[i] ) * 0.5; // average of v(n-1/2) and v(n+1/2): x and v must be taken at the same time
 
             W[i] = 0.5 * electron.m * mean_velocity * mean_velocity + (temp_pos[i])*(temp_pos[i]) * 0.5 ; // simulated solution for energy at time n 
             
