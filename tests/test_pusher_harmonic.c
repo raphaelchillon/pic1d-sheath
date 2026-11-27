@@ -44,7 +44,7 @@ int main(void){
 
     double *E_field = calloc (electron.number, sizeof(double)); //initialization of the field
 
-    if (E_field = NULL || electron.p = NULL){return 1} //checking for NULL pointer
+    if (E_field == NULL || electron.p == NULL){return 1;} //checking for NULL pointer
 
     for(int i=0; i<electron.number; i++){ //initialization of position, velocity, field & calcul of energy 
 
