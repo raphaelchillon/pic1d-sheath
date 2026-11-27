@@ -1,5 +1,15 @@
 #include "pusher.h"
 
+/*
+
+This file aims to initialize the particle's velocity and update its position over time. 
+
+*/
+
+
+
+
+
 /* 
 
 This function aims to pushback the initial velocity to v(-dt/2) in order to fulfill the leapfrog method. 
