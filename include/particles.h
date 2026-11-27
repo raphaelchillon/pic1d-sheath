@@ -18,8 +18,8 @@ All quantities are in normalized units (see docs/model.md):
 
 struct particle {
 
-    double x; /*Particle's position, on the x axis'*/ 
-    double v; /*Particle's speed, on the x axis'*/ 
+    double x; /*Particle's position, on the x axis*/ 
+    double v; /*Particle's speed, on the x axis*/ 
 
 };
 
