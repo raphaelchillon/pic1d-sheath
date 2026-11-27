@@ -4,6 +4,17 @@
 #include <stdlib.h>
 
 
+/* 
+
+PUSHER FOR UNIFORM FIELD. 
+
+We will have 1 electron, starting from x=0 with v=1. 
+The corresponding field will be E = Eo.
+
+*/
+
+
+
 int main(void){
 
     /* PARAMETERS DEFINITION */
