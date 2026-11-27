@@ -3,6 +3,8 @@
 
 /* 
 
+This code declares the functions for the pusher.
+
 All quantities in normalized units, see particles.h and docs/model.md. 
 
 
