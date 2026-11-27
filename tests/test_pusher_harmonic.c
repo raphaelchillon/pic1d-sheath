@@ -44,6 +44,8 @@ int main(void){
 
     double *E_field = calloc (electron.number, sizeof(double)); //initialization of the field
 
+    if (E_field = NULL || electron.p = NULL){return 1} //checking for NULL pointer
+
     for(int i=0; i<electron.number; i++){ //initialization of position, velocity, field & calcul of energy 
 
 
@@ -57,6 +59,7 @@ int main(void){
 
 
     }
+    
 
     velocity_setback(&electron, E_field, dt); //setback velocity for leapfrog. 
 
@@ -112,7 +115,7 @@ int main(void){
 
             xth[i]=initial_pos[i]*cos(time) + initial_vel[i]*sin(time); // theorical solution for harmonic oscillator with x0 & v0 as initial values. 
 
-            double mean_velocity = ( electron.p[i].v + temp_vel[i] ) * 0.5; // computing v at time n -> mean value of time n-1/2 and n+1/2 
+            double mean_velocity = ( electron.p[i].v + temp_vel[i] ) * 0.5; // // average of v(n-1/2) and v(n+1/2): x and v must be taken at the same time
 
             W[i] = 0.5 * electron.m * mean_velocity * mean_velocity + (temp_pos[i])*(temp_pos[i]) * 0.5 ; // simulated solution for energy at time n 
             
